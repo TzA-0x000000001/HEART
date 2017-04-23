@@ -15,6 +15,14 @@
 	<br>
 	<label for="pass3">Troisième mot de passe</label>
 	<input type="text" name="pass3">
+	<br>
+	<button type="submit">Envoyer</button>
 </form>
+<div id="result"></div>
+<script type="text/javascript">
+	$('button[type="submit"]').click(function(){
+		$('#result').text("Hey");
+	});
+</script>
 </body>
 </html>
