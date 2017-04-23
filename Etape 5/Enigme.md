@@ -11,3 +11,5 @@ Dans la citation suivante :
 * Former un mot avec
 
 La réponse à cette énigme est un troisième code.
+
+Rends-toi désormais sur [cette page](https://cdn.rawgit.com/TzA-0x000000001/HEART/master/Etape%20Finale.html).
