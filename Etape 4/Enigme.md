@@ -5,6 +5,11 @@
 > Maurice Blanchot, *Aminadab*.
 
 Je suis un nom commun.
+
 Je suis masculin.
+
 Je ne suis pas une réponse au Sphynx, bien que je puisse tenir sur trois ou quatre pieds.
+
 Je suis le cousin du tambour.
+
+La réponse à cette énigme est un second code. Conserve-le, il n'a pas à voir directement avec l'énigme suivante.
