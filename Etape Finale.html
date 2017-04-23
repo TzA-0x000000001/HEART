@@ -1,27 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
+	<meta charset="UTF-8">
 	<title>Pour toi ~</title>
-	<script type="text/javascript">https://cdn.rawgit.com/bitwiseshiftleft/sjcl/3668e639/sjcl.js</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
-<form>
-	<label for="pass1">Premier mot de passe</label>
-	<input type="text" name="pass1">
-	<br>
-	<label for="pass2">Second mot de passe</label>
-	<input type="text" name="pass2">
-	<br>
-	<label for="pass3">Troisième mot de passe</label>
-	<input type="text" name="pass3">
-	<br>
-	<button type="submit">Envoyer</button>
-</form>
-<div id="result"></div>
+<div style="min-height:100vh;display:flex;">
+	<form style="width:400px;margin:auto;">
+	  <div class="form-group">
+	    <label for="pass1">Premier mot de passe</label>
+	    <input type="text" class="form-control" id="pass1">
+	  </div>
+	  <div class="form-group">
+	    <label for="pass2">Second mot de passe</label>
+	    <input type="text" class="form-control" id="pass2">
+	  </div>
+	  <div class="form-group">
+	    <label for="pass3">Troisième mot de passe</label>
+	    <input type="text" class="form-control" id="pass3">
+	  </div>
+	  <button type="button" class="btn btn-default">Envoyer</button>
+	  <div id="result" style="text-align: center; font-size: 2em; margin: 10px; height: 50px;"></div>
+	</form>
+</div>
 <script type="text/javascript">
-	$('button[type="submit"]').click(function(){
-		$('#result').text("Hey");
+	$('button').click(function(){
+		var e = CryptoJS.AES.decrypt("U2FsdGVkX1/ZC3zC6Lj5x/uUe9ypz33NqDdAXB3ow3c=", $('#pass1').val().toUpperCase() + "_" + $('#pass2').val().toUpperCase() + "_" + $('#pass3').val().toUpperCase()).toString(CryptoJS.enc.Utf8);
+		if(e.length === 0) {
+			$('#result').text("Hum... Non, pas vraiment. :(");
+		}
+		else { 
+			$('#result').text(e);
+		}
 	});
 </script>
 </body>
